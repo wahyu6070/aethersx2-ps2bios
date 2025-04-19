@@ -1,0 +1,20 @@
+{{ partial "meta/main.html" . }}
+<head>
+{{ partial "meta/html.html" . }}
+<title>{{ .Page.Title | default .Site.Title }}</title>
+{{ partial "google/analytics.html" . }}
+{{ partial "framework.html" . }}
+{{ partial "meta/favicon.html" . }}
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+{{ partial "navbar.html"  . }}
+<main class="container">
+<article>
+<p class="MID"><strong>Page not found ! :(</strong></p>
+</article>
+</main>
+{{ partial "js.html" . }}
+{{ partial "footer.html" . }}
+</body>
+</html>

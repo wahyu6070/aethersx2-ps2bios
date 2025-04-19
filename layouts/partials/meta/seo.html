@@ -1,0 +1,26 @@
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#ffffff">
+{{ $jk := "bjorka6868" }}
+
+{{ $desc := "lol" }}
+{{ if eq .Type "game" }}
+	{{ $desc = printf "Download Playstation 2 games support AetherSX2 & PCSX2 emulator %s Size %s, Don't forget to extract the zip file." .Title .Params.size }}
+{{ else }}
+  {{ if .Description }}
+  {{ $desc = .Description }}
+  {{ else if .Summary }}
+  {{ $desc =  .Summary | plainify | truncate 150 }}
+  {{ else }}
+  {{ $desc = "AetherSX2 is a Playstation 2 Emulator for Android, iOS, Linux, Mac and Windows based Arhitecture ARM which means it can run PS2 games on Mobile and Desktop with Architecture Arm64." }}
+ {{ end }}
+{{ end }}
+
+<meta name="description" content="{{ $desc }}">
+<meta name="generator" content="Curex 0.109.0">
+<meta name="author"  content="{{ .Site.Params.author | default .Page.Params.Author }}">
+<link rel="canonical" href="{{ .Permalink }}">
+<!-- js -->
+<script type="application/ld+json"> {"@context":"https://schema.org","@type":"WebSite","author":{"@type":"Person","name":"{{ .Site.Params.author | default .Page.Params.Author }}"},"description":"{{ $desc }}","headline":"{{ .Title | default .Site.Title }}","name":"{{ .Title | default .Site.Title }}","url":"{{ .Permalink }}"}</script>
+
+<meta name="robots" content="index, follow">
+

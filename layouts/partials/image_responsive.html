@@ -1,0 +1,57 @@
+{{ $image := .src }}
+{{ $small := .small | default "400" }}
+{{ $medium := .medium | default "800" }}
+{{ $large := .large | default "1200" }}
+{{ $xlarge := .xlarge | default "1600" }}
+{{ $alt := .alt | default "" }}
+{{ $classs := .classs }}
+{{ $width := .width }}
+
+{{ $smallS := " " }}
+{{ $mediumS := " " }}
+{{ $largeS := " " }}
+{{ $xlargeS := " " }}
+{{ with resources.GetMatch $image }}
+    {{ $original := . }}
+    {{ $webpAvailable := eq .MediaType.SubType "png" }}
+    
+    {{ if $webpAvailable }}
+        {{ $smallS = .Resize (printf "%sx webp q5" $small) }}
+    	{{ $mediumS = .Resize (printf "%sx webp q10" $medium) }}
+    	{{ $largeS = .Resize (printf "%sx webp q15" $large) }}
+    	{{ $xlargeS = .Resize (printf "%sx webp q30" $xlarge) }}
+    {{ else }}
+    	{{ $smallS = .Resize (printf "%sx q5" $small) }}
+    	{{ $mediumS = .Resize (printf "%sx q10" $medium) }}
+    	{{ $largeS = .Resize (printf "%sx q15" $large) }}
+    	{{ $xlargeS = .Resize (printf "%sx q30" $xlarge) }}
+    {{ end }}
+    
+    {{ $imgWidth := $xlargeS.Width }}
+    {{ $imgHeight := $xlargeS.Height }}
+
+    <picture>
+        {{ if $webpAvailable }}
+            <source type="image/webp" srcset="{{ $smallS.RelPermalink }} {{ $small }}w,
+                                                   {{ $mediumS.RelPermalink }} {{ $medium }}w,
+                                                   {{ $largeS.RelPermalink }} {{ $large }}w,
+                                                   {{ $xlargeS.RelPermalink }} {{ $xlarge }}w">
+        {{ end }}
+
+        <img src="{{ $smallS.RelPermalink }}"
+             srcset="{{ $smallS.RelPermalink }} {{ $small }}w,
+                     {{ $mediumS.RelPermalink }} {{ $medium }}w,
+                     {{ $largeS.RelPermalink }} {{ $large }}w,
+                     {{ $xlargeS.RelPermalink }} {{ $xlarge }}w"
+             sizes="(max-width: 576px) 95vw,
+                    (max-width: 768px) 80vw,
+                    (max-width: 992px) 70vw,
+                    (max-width: 1200px) 60vw,
+                    50vw"
+             alt="{{ $alt }}"
+             loading="lazy"
+             width="{{ $imgWidth }}"
+             height="{{ $imgHeight }}"
+             class="img-fluid {{ $classs }}">
+    </picture>
+{{ end }}

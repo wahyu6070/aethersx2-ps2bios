@@ -1,0 +1,20 @@
+
+<table class="table table-sm">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Size</th>
+    </tr>
+  </thead>
+	{{ $Name := where site.RegularPages "Type" "game" }}
+	{{ range (sort $Name) }}
+		{{ if  (and (ne .Params.server "myrient") (ne .Params.region "asia")) }}
+		 <tbody>
+		  <tr>
+		  <td class="tddd"><a href="{{ .Permalink }}">{{ .Title }}</a></td>
+		  <td class="tdcc">{{ .Params.size }}</td>
+		  </tr>
+		 </tbody>
+ 		{{ end }}
+    {{ end }}
+</table>

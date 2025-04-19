@@ -1,0 +1,38 @@
+<header>
+<nav class="navbar navbar-expand-md bg-body-tertiary fixed-top rounded">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">
+    	<img src="/img/icon2.webp" 
+             alt="AetherSX2 main Icon" 
+             width="96" 
+             height="96"
+    		 class="ICON_MAIN">
+	</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav me-auto mb-2 mb-md-0">
+    	 <li class="nav-item">
+ 			 <a class="nav-link {{ if .IsHome }}active{{ end }}" aria-current="page" href="/">Home</a>
+		</li>
+		<li class="nav-item">
+			  <a class="nav-link {{ if hasPrefix .RelPermalink "/download" }}active{{ end }}" href="/download">Download</a>
+		</li>
+		<li class="nav-item">
+ 		 	<a class="nav-link {{ if hasPrefix .RelPermalink "/ps2bios" }}active{{ end }}" href="https://ps2bios.site/">Bios</a>
+		</li>
+		<li class="nav-item">
+ 			 <a class="nav-link {{ if hasPrefix .RelPermalink "/game" }}active{{ end }}" href="https://roms9.com/ps2">Game</a>
+		</li>
+		<li class="nav-item">
+ 			 <a class="nav-link {{ if hasPrefix .RelPermalink "/blog" }}active{{ end }}" href="/blog">Blog</a>
+		</li>
+      </ul>
+    </div>
+  </div>
+
+</nav>
+</header>
+  
+

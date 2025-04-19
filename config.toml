@@ -1,0 +1,53 @@
+baseurl = "https://aethersx2.me"
+contentdir    = "content"
+layoutdir     = "layouts"
+publishdir    = "public"
+resourceDir = "../resources"
+
+PygmentsCodeFences = true
+PygmentsStyle      = "monokai"
+
+[params]
+  author = "bjorka6868"
+  
+buildFuture = true
+
+[pagination]
+  disableAliases = false
+  pagerSize = 70
+
+     
+[sitemap]
+  changefreq = "always"
+  priority = 0.8
+  filename = "sitemap.xml"
+[permalinks]
+  news     = ":section/:year/:month/:day/:slug"
+
+[minify]
+  minifyOutput = true
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true # Agar bisa menulis HTML di Markdown
+# buat komresi gambar
+[imaging]
+  hint = "photo"
+  quality = 70
+  resampleFilter = "Lanczos"
+  
+  [imaging.exif]
+    disableDate = true
+    disableLatLong = true
+    excludeFields = ""
+    includeFields = ""
+    
+[outputs]
+  home = ["HTML", "RSS"] # Memastikan RSS tetap aktif untuk halaman utama
+  page = ["HTML"] # Memastikan RSS tetap aktif untuk halaman konten
+  section = ["HTML"] # Memastikan RSS tetap aktif untuk bagian konten
+  taxonomy = ["HTML"] # Menonaktifkan RSS untuk daftar taksonomi
+  term = ["HTML"] # Menonaktifkan RSS untuk istilah taksonomi
+  
+  

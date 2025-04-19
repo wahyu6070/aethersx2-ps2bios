@@ -1,0 +1,16 @@
+{{ partial "meta/html.html" . }}
+{{ if eq .Type "game" }}
+<title>{{ printf "%s - AetherSX2 & PCSX2 Games Download" (.Title | truncate 140 "...") | safeHTML }}</title>
+{{ else }}
+<title>{{ .Title | default .Page.Title | default .Site.Title | truncate 140 "..." | safeHTML }}</title>
+{{ end }}
+{{ partial "meta/opengraph.html" . }}
+{{ partial "meta/seo.html" . }}
+{{ partial "meta/apple.html" . }}
+{{ partial "meta/twitter.html" . }}
+{{ partial "meta/schema.html" . }}
+{{ partial "framework.html" . }}
+{{ partial "meta/favicon.html" . }}
+{{ if ne .Params.traf "disable" }}
+{{ partial "google/analytics.html" . }}
+{{ end }}
