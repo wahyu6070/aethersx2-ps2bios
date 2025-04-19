@@ -1,7 +1,7 @@
 ---
 lang: en
-title  : PS2 Bios Download OFFICIAL For AetherSX2 & PCSX2 Emulator
-description: PS2 BIOS is the basic system software on the Playstation 2 (PS2), Bios itself is an abbreviation of (Basic Input/Output System) which functions to bridge between the hardware and software on the PS2 which allows running Playstation 2 Games.
+title  : PS2 Bios Download OFFICIAL For AetherSX2 & PCSX2
+description: Essential firmware for the PlayStation 2 console. The PS2 BIOS handles system boot-up, hardware initialization, and loading games. Needed for emulation.
 keywords  : [
     "download PS2 BIOS",
     "where to get ps2 bios",
