@@ -25,7 +25,23 @@
 {{ partial "ads/body.html" . }}
 */}}
 <article>
-		
+	
+	
+<svg style="position: absolute; width: 0; height: 0; overflow: hidden;">
+  <defs>
+    <linearGradient id="gradDefIcon" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3BAEF8"/>
+      <stop offset="100%" stop-color="#5F5DFF"/>
+    </linearGradient>
+
+    <symbol id="icon-download-grad" viewBox="0 0 512 512">
+        <circle cx="256" cy="256" r="256" fill="url(#gradDefIcon)"/>
+        <path fill="none" stroke="#FFFFFF" stroke-width="32" stroke-linecap="round" stroke-linejoin="round"
+              d="M128 320v48c0 17.7 14.3 32 32 32h192c17.7 0 32-14.3 32-32v-48M176 256l80 80 80-80M256 80v176"/>
+    </symbol>
+
+    </defs>
+</svg>
 	<h1>{{ .Title }}</h1>
 <p><strong>PS2 BIOS</strong> is the basic system software on the <i>Playstation 2</i>, <b>PS2 BIOS</b> itself is an abbreviation of (Basic Input/Output System) which functions to connect hardware and software on the <b>PS2 Emulator</b> which allows running PS2 BIOS Games Such as <b>AetherSX2 Emulator</b> or <strong>PCSX2 Emulator</strong>.</p>
 
@@ -42,24 +58,50 @@
     <tr>
       <th scope="row">1</th>
       <td>USA</td>
-      <td><a href="https://archive.org/download/bios-usaaethersx-2.me/BIOS-usa%28aethersx2.me%29.bin"><img src="/img/d.webp" alt="Ps2 bios download new USA" class="DOWNLOAD_ICON"></a></td>
+      <td><a href="https://archive.org/download/bios-usaaethersx-2.me/BIOS-usa%28aethersx2.me%29.bin">
+      <svg width="23" height="23">
+  		<use href="#icon-download-grad" class="DOWNLOAD_ICON"/>
+		</svg>
+      </td>
      <td>19-04-2025</td>
     </tr>
     <tr>
       <th scope="row">2</th>
       <td>EUROPA</td>
-      <td><a href="https://archive.org/download/bios-europaaethersx-2.me/BIOS-europa%28aethersx2.me%29.bin"><img src="/img/d.webp" alt="Ps2 Bios Download new europa" class="DOWNLOAD_ICON"></a></td>
+      <td><a href="https://archive.org/download/bios-europaaethersx-2.me/BIOS-europa%28aethersx2.me%29.bin">
+      <svg width="23" height="23">
+  		<use href="#icon-download-grad" class="DOWNLOAD_ICON"/>
+		</svg>
+      </td>
       <td>19-04-2025</td>
     </tr>
     <tr>
       <th scope="row">3</th>
       <td>JAPAN</td>
-      <td><a href="https://archive.org/download/bios-japanaethersx-2.me/BIOS-japan%28aethersx2.me%29.bin"><img src="/img/d.webp" alt="PS2 Download New Japan" class="DOWNLOAD_ICON"></a></td>
+      <td>
+      	<svg width="23" height="23">
+  		<use href="#icon-download-grad" class="DOWNLOAD_ICON"/>
+		</svg>
+      </td>
       <td>19-04-2025</td>
     </tr>
   </tbody>
 </table>
 
+<!-- Pertama -->
+<svg width="96" height="96">
+  <use href="#icon-download" />
+</svg>
+
+<!-- Kedua -->
+<svg width="64" height="64">
+  <use href="#icon-download" />
+</svg>
+
+<!-- Ketiga -->
+<svg width="128" height="128">
+  <use href="#icon-download" />
+</svg>
 
 <p>Although the <strong>BIOS (Basic Input/Output System)</strong> for the PlayStation 2 is fundamentally system software exclusively embedded within the <em>PlayStation 2</em> console itself, these BIOS files have now been successfully extracted and adapted. The goal is to allow these crucial system files to be utilized by emulator software such as <strong>Aethersx2</strong>, <string>PCSX2</strong>, or other available PS2 emulators.</p>
 
