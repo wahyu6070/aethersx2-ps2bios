@@ -1,4 +1,4 @@
-baseurl = "https://aethersx2.me"
+baseurl = "https://ps2bios.aethersx2.me"
 contentdir    = "content"
 layoutdir     = "layouts"
 publishdir    = "public"
