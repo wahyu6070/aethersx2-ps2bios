@@ -1,8 +1,6 @@
 ---
-title  : AetherSX2 Emulator For Android - IOS Bios Download
-description : AetherSX2 is a Emulator Playstation 2 for Android, IOS, Windows, MAC and Linux.
 lang: en
-title  : PS2 Bios Download AetherSX2 & PCSX2 Emulator
+title  : PS2 Bios Download OFFICIAL For AetherSX2 & PCSX2 Emulator
 description: PS2 BIOS is the basic system software on the Playstation 2 (PS2), Bios itself is an abbreviation of (Basic Input/Output System) which functions to bridge between the hardware and software on the PS2 which allows running Playstation 2 Games.
 keywords  : [
     "download PS2 BIOS",
