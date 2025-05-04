@@ -1,0 +1,240 @@
+/* --- Gaya Khusus Halaman Artikel Blog --- */
+body.body_article {
+    margin: 0;
+    padding: 1rem; /* Padding dasar body artikel */
+    font-family: 'Inter', sans-serif;
+    background-color: #f9fafb;
+    color: #1f2937;
+    line-height: 1.6;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+article.blog-article {
+    background-color: #ffffff;
+    padding: 1.5rem; /* Padding internal artikel (mobile) */
+    padding-top: 2rem;
+    margin-bottom: 2rem; /* Jarak bawah antar artikel (default) */
+    max-width: 800px; /* Lebar maksimum konten artikel */
+    margin-top: 2rem;
+    margin-left: auto;
+    margin-right: auto; /* Tengahkan artikel */
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    border-bottom: none; /* Hapus border-bottom jika sudah pakai shadow */
+}
+
+/* Gaya dasar elemen teks dalam artikel */
+article.blog-article p {
+    margin-top: 0;
+    margin-bottom: 1rem; /* Jarak bawah paragraf (mobile) */
+    line-height: 1.7;
+    color: #374151;
+    font-size: 1rem; /* Ukuran font paragraf (mobile) */
+}
+
+article.blog-article h1,
+article.blog-article h2,
+article.blog-article h3,
+article.blog-article h4,
+article.blog-article h5,
+article.blog-article h6 {
+    margin-top: 1.5rem; /* Jarak atas heading */
+    margin-bottom: 1rem; /* Jarak bawah heading (default) */
+    line-height: 1.3;
+    font-weight: 600;
+    color: #111827;
+}
+
+article.blog-article h1:first-child,
+article.blog-article h2:first-child,
+article.blog-article h3:first-child {
+    margin-top: 0; /* Hapus margin atas jika heading adalah elemen pertama */
+}
+
+/* Penyesuaian Ukuran & Jarak Heading Artikel (Ukuran Font Tetap) */
+article.blog-article h1 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 1.5rem; /* Jarak bawah H1 (mobile) */
+}
+
+article.blog-article h2 {
+    font-size: 1.8rem;
+    text-align: center;
+    /* PERBAIKAN: Naikkan margin bawah H2 di mobile agar lebih seimbang */
+    margin-bottom: 1.2rem; /* Jarak bawah H2 (mobile) - Disesuaikan */
+}
+
+article.blog-article h3 {
+    font-size: 1.5rem;
+    /* text-align: center; */ /* Biarkan default (kiri) atau sesuaikan */
+    margin-bottom: 1rem; /* Jarak bawah H3 (mobile) */
+}
+
+/* Jarak antar artikel jika ada > 1 */
+article.blog-article + article.blog-article {
+    margin-top: 2rem;
+}
+
+/* --- Media Queries (Responsif) --- */
+
+/* Tablet (lebar layar 768px ke atas) */
+@media (min-width: 768px) {
+    /* Penyesuaian Umum Tablet */
+     header .navbar-container nav {
+        display: flex !important; /* Pastikan nav terlihat di tablet+ */
+        flex-direction: row;
+        width: auto;
+        background-color: transparent;
+        padding: 0;
+        margin-top: 0;
+        align-items: center;
+        box-shadow: none;
+    }
+     header .navbar-container nav a {
+        margin: 0 1rem; /* Jarak antar item nav */
+        width: auto;
+        color: inherit; /* Atau warna spesifik nav desktop */
+    }
+    .hamburger-menu {
+        display: none !important; /* Sembunyikan hamburger di tablet+ */
+    }
+
+    #about .card {
+        max-width: 800px; /* Kembalikan max-width */
+        padding: 2rem; /* Kembalikan padding */
+    }
+
+    #features .grid-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 kolom */
+    }
+
+    /* Penyesuaian Artikel Blog Tablet */
+    body.body_article {
+        padding: 2rem; /* Padding body lebih besar */
+    }
+    article.blog-article {
+        padding: 2rem; /* Padding internal artikel lebih besar */
+        margin-bottom: 2rem; /* Jarak bawah artikel sedikit lebih besar */
+    }
+    article.blog-article p {
+        margin-bottom: 1.25rem; /* Jarak bawah paragraf sedikit lebih besar */
+        font-size: 1.05rem; /* Sedikit perbesar font paragraf */
+    }
+    /* Margin heading artikel di tablet */
+    article.blog-article h1 { margin-bottom: 1.8rem; }
+    article.blog-article h2 { margin-bottom: 1.5rem; }
+    article.blog-article h3 { margin-bottom: 1.1rem; }
+}
+
+/* Desktop Sedang (lebar layar 1025px ke atas - menyesuaikan grid #features) */
+@media (min-width: 1025px) {
+    #features .grid-container {
+        grid-template-columns: repeat(3, 1fr); /* 3 kolom */
+    }
+
+    /* Penyesuaian Artikel Blog Desktop */
+     /* Gunakan breakpoint yang sama atau baru untuk penyesuaian desktop */
+    article.blog-article {
+        margin-bottom: 2.5rem; /* Jarak bawah artikel lebih besar */
+    }
+    article.blog-article p {
+        margin-bottom: 1.5rem; /* Jarak bawah paragraf lebih besar */
+        font-size: 1.1rem; /* Perbesar lagi font paragraf */
+    }
+    /* Margin heading artikel di desktop */
+    article.blog-article h1 { margin-bottom: 2rem; }
+    article.blog-article h2 { margin-bottom: 1.7rem; }
+    article.blog-article h3 { margin-bottom: 1.2rem; }
+}
+
+
+/* Media Query Khusus Mobile (max-width: 768px) - Untuk gaya yang HANYA berlaku di mobile */
+@media (max-width: 768px) {
+     header .navbar-container {
+        flex-wrap: wrap; /* Izinkan wrap di mobile */
+    }
+    .site-logo {
+        flex-grow: 1;
+        justify-content: flex-start;
+    }
+     header .navbar-container nav { /* Gaya menu mobile tersembunyi */
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #f0f0f0; /* Background menu mobile */
+        padding: 1rem 0;
+        margin-top: 1rem;
+        align-items: flex-start;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+     header .navbar-container nav.active { /* Gaya saat menu mobile aktif */
+        display: flex;
+    }
+     header .navbar-container nav a {
+        margin: 0.5rem 1rem; /* Jarak item menu mobile */
+        width: calc(100% - 2rem);
+        color: #333; /* Warna link menu mobile */
+    }
+    .hamburger-menu {
+        display: block; /* Tampilkan hamburger di mobile */
+         /* Styling tambahan untuk hamburger jika perlu */
+         cursor: pointer;
+         /* Style untuk ikon hamburger (bars) bisa ditambahkan di sini */
+    }
+
+    #about .card {
+        max-width: 95%; /* Card 'About' lebih lebar di mobile */
+        padding: 1.5rem; /* Padding lebih kecil */
+    }
+    #scroll-to-top-btn {
+        padding: 10px;
+        font-size: 16px;
+        bottom: 15px;
+        right: 15px;
+    }
+    footer .footer-links a {
+        margin: 0.5rem 0.75rem; /* Sesuaikan margin link footer agar pas saat wrap */
+    }
+     /* Pastikan grid #features 1 kolom di sini jika tidak ada override lain */
+     #features .grid-container {
+        grid-template-columns: 1fr;
+     }
+}
+
+/* Gabungkan media query jika memungkinkan */
+/* @media (min-width: 769px) { ... } */
+
+img.centered-article-image { /* Menggunakan class baru untuk lebih spesifik jika diperlukan */
+            display: block; /* Agar margin auto bekerja */
+            margin-top: 1.5rem; /* Diambil dari .image-container */
+            margin-bottom: 1.5rem; /* Diambil dari .image-container */
+            margin-left: auto; /* Menengahkan gambar secara horizontal */
+            margin-right: auto; /* Menengahkan gambar secara horizontal */
+            max-width: 100%; /* Membuat gambar responsif */
+            height: auto; /* Menjaga rasio aspek gambar */
+            border-radius: 0.375rem; /* Sudut membulat */
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); /* Bayangan halus */
+            border: 2px solid silver; /* Border silver */
+        }
+
+        /* Media Query untuk layar yang lebih besar */
+        @media (min-width: 768px) {
+            article {
+                padding: 2rem;
+            }
+            h1 {
+                font-size: 1.875rem;
+            }
+            p {
+                font-size: 1.125rem;
+            }
+            /* Sesuaikan margin gambar di layar besar jika perlu */
+            img.centered-article-image {
+                 margin-top: 2rem; /* Contoh penyesuaian margin */
+                 margin-bottom: 2rem; /* Contoh penyesuaian margin */
+            }
+            }

@@ -1,1 +1,60 @@
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<button id="scroll-to-top-btn" title="Scroll To Up">&#9650;</button>
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navbarLinks = document.getElementById('navbar-links');
+        const scrollToTopBtn = document.getElementById('scroll-to-top-btn');
+        const faqQuestions = document.querySelectorAll('.faq-question');
+
+        hamburger.addEventListener('click', () => {
+            navbarLinks.classList.toggle('active');
+            hamburger.classList.toggle('open');
+        });
+
+        navbarLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (navbarLinks.classList.contains('active')) {
+                    navbarLinks.classList.remove('active');
+                    hamburger.classList.remove('open');
+                }
+            });
+        });
+
+        window.addEventListener('scroll', () => {
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                scrollToTopBtn.classList.add('show');
+            } else {
+                scrollToTopBtn.classList.remove('show');
+            }
+        });
+
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        const scrollStorageKey = 'dolphin_emulator_scroll_position';
+
+        window.addEventListener('pagehide', () => {
+            localStorage.setItem(scrollStorageKey, window.scrollY);
+        });
+
+        window.addEventListener('load', () => {
+            const savedScrollPosition = localStorage.getItem(scrollStorageKey);
+
+            if (savedScrollPosition !== null) {
+                setTimeout(() => {
+                    window.scrollTo(0, parseInt(savedScrollPosition, 10));
+                }, 50);
+            }
+        });
+
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                question.classList.toggle('active');
+                const answer = question.nextElementSibling;
+                answer.classList.toggle('active');
+            });
+        });
+    </script>

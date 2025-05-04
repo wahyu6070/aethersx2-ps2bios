@@ -1,0 +1,108 @@
+/* Wrapper untuk formulir */
+        .search-container-icon-internal {
+            max-width: 520px;
+            width: 100%;
+        }
+
+        /* Styling formulir */
+        .search-form-icon-internal {
+            display: flex;
+            align-items: center; /* Sejajarkan item secara vertikal */
+            gap: 0.75rem; /* Jarak antara input wrapper dan tombol */
+        }
+
+        /* Wrapper untuk input dan ikon (untuk positioning) */
+        .input-wrapper {
+            position: relative; /* Agar ikon bisa diposisikan absolut */
+            flex-grow: 1; /* Wrapper mengambil ruang sisa */
+            display: flex; /* Untuk memastikan tinggi konsisten */
+        }
+
+        /* Styling ikon SVG di dalam input */
+        .input-icon {
+            position: absolute;
+            left: 1rem; /* Jarak ikon dari kiri */
+            top: 50%;
+            transform: translateY(-50%); /* Pusatkan ikon secara vertikal */
+            color: #9ca3af; /* Warna ikon abu-abu (akan diwariskan ke SVG fill) */
+            pointer-events: none; /* Agar ikon tidak mengganggu klik pada input */
+            display: inline-flex; /* Agar SVG bisa diatur ukurannya */
+            align-items: center;
+            justify-content: center;
+            width: 1em; /* Lebar ikon */
+            height: 1em; /* Tinggi ikon */
+        }
+        .input-icon svg {
+             width: 100%;
+             height: 100%;
+             fill: currentColor; /* Mengambil warna dari parent (.input-icon) */
+        }
+
+
+        /* Styling input pencarian */
+        .search-input-icon-internal {
+            width: 100%; /* Input mengisi wrapper */
+            border: 1px solid #ced4da; /* Border abu-abu standar */
+            border-radius: 25px; /* Sudut sangat membulat */
+            padding: 0.8rem 1rem 0.8rem 3rem; /* Atas/Bawah, Kanan, Kiri (beri ruang untuk ikon) */
+            font-size: 1rem;
+            background-color: #ffffff;
+            color: #212529;
+            transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            outline: none;
+        }
+
+        /* Styling input saat fokus */
+        .search-input-icon-internal:focus {
+            border-color: #86b7fe; /* Warna border biru muda saat fokus */
+            box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25); /* Efek glow biru saat fokus */
+        }
+        /* Ganti warna ikon saat input fokus */
+         .search-input-icon-internal:focus ~ .input-icon { /* Gunakan sibling combinator (~) */
+             color: #495057; /* Warna ikon sedikit lebih gelap */
+         }
+
+
+        /* Styling placeholder */
+        .search-input-icon-internal::placeholder {
+            color: #6c757d;
+            opacity: 1; /* Firefox */
+        }
+
+        /* Styling untuk tombol submit */
+        .search-button-icon-internal {
+            background-color: #0d6efd; /* Warna biru primer Bootstrap */
+            color: white;
+            border: none;
+            border-radius: 25px; /* Sudut membulat sama dengan input */
+            padding: 0.8rem 1.5rem; /* Padding tombol */
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 500;
+            display: inline-flex; /* Menggunakan inline-flex */
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem; /* Jarak antara ikon SVG (jika ada) dan teks */
+            transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            outline: none;
+            white-space: nowrap; /* Agar teks tidak turun baris */
+        }
+         /* Styling untuk SVG di dalam tombol (jika digunakan) */
+        .search-button-icon-internal svg {
+            width: 1em; /* Sesuaikan ukuran SVG */
+            height: 1em;
+            fill: currentColor; /* Warna SVG mengikuti warna teks tombol */
+        }
+
+
+        /* Styling tombol saat hover */
+        .search-button-icon-internal:hover {
+            background-color: #0b5ed7; /* Warna biru lebih gelap */
+        }
+
+        /* Styling tombol saat focus */
+        .search-button-icon-internal:focus {
+            background-color: #0b5ed7;
+            box-shadow: 0 0 0 0.25rem rgba(49, 132, 253, 0.5); /* Efek glow biru */
+        }
+        

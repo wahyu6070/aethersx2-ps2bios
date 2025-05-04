@@ -12,7 +12,9 @@
   <meta property="og:description" content="{{ trim . "\n\r\t " }}">
 {{- end }}
 
+
 <meta property="og:locale" content="{{ .Params.oglang | default "en_US" }}">
+
 
 {{- if .IsPage }}
   <meta property="og:type" content="article">

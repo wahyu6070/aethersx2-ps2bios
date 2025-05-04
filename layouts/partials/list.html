@@ -1,29 +1,35 @@
 <main class="container">
-<article>
-<h1>{{ .Title }}</h1>
-{{ .Content }}
-</article>
-<section class="blog">
-    {{ range .Pages }}
-    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-        <div class="col p-4 d-flex flex-column position-static">
-        	
-          <strong class="d-inline-block mb-2 text-primary-emphasis">{{ .Params.catagory }}</strong>
-          <h3 class="mb-0"> <a class="post-link" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h3>
-          <div class="mb-1 text-body-secondary">
-          {{ .Date | time.Format ":date_medium" }}
+  <article>
+    <h1 class="page-title">{{ .Title }}</h1>
+    {{ .Content }}
+
+  <section>
+    <ul class="blog-list">
+      {{/* Mulai perulangan untuk setiap halaman/postingan */}}
+      {{ range .Pages }}
+        <li class="blog-post-item">
+          <div class="blog-post-content">
+            <h3 class="blog-post-title">
+              <a href="{{ .Permalink }}">{{ .Title }}</a>
+            </h3>
+
+            <div class="blog-post-meta">
+              <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+              {{/* Anda bisa menggunakan format lain seperti ":date_medium" jika preferensi */}}
+              {{/* <time datetime="{{ .Date | time.Format ":date_medium" }}">{{ .Date | time.Format ":date_medium" }}</time> */}}
+            </div>
+
+            <p class="blog-post-summary">
+              {{/* Tampilkan excerpt jika ada, jika tidak tampilkan ringkasan */}}
+              {{ if .Params.Excerpt }}
+                {{ .Params.Excerpt }}
+              {{ else }}
+                {{ .Summary | plainify | truncate 300 }}
+              {{ end }}
+            </p>
           </div>
-          
-          <p class="card-text mb-auto">
-          {{ if .Params.Excerpt -}}
-           {{ .Params.Excerpt }}
-          {{- else -}}
-           {{ .Summary | plainify | truncate 300 }}
-           {{ end }}
-          </p>
-        </div>
-        
-      </div>
-      {{ end }}
-</section>
+        </li>
+      {{ end }} {{/* Akhir dari perulangan .Pages */}}
+    </ul> </section>
+</article>
 </main>

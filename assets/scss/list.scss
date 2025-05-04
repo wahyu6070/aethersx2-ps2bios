@@ -1,0 +1,93 @@
+ /* General Page Title */
+ .page-title {
+     margin-bottom: 5px;
+     font-size: 2em;
+     font-weight: 500;
+ }
+
+ /* === BARU: Styling untuk Article di dalam Container === */
+ /* Menargetkan article yang merupakan anak langsung dari .container */
+ .container > article {
+     padding-top: 2rem; /* Memindahkan padding dari inline style */
+ }
+ /* ===================================================== */
+
+ /* Blog List Styling */
+ .blog-list {
+     list-style: none; /* Remove default list bullets */
+     padding: 0;      /* Remove default list padding */
+     margin: 0;       /* Remove default list margin */
+ }
+
+ /* Individual Blog Post Item Styling - Mimics Bootstrap Card/Row */
+ .blog-post-item {
+     background-color: #fff;
+     border: 1px solid rgba(0, 0, 0, 0.125); /* Subtle border */
+     border-radius: 0.375rem; /* Rounded corners */
+     margin-bottom: 1.5rem; /* Spacing between items (sesuaikan jika perlu) */
+     box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075); /* Subtle shadow */
+     overflow: hidden; /* Contain border-radius */
+     display: flex;
+     flex-direction: column; /* Stack content vertically by default */
+ }
+
+ /* Content Padding inside the item */
+ .blog-post-content {
+     padding: 1.5rem; /* Internal padding */
+     display: flex;
+     flex-direction: column;
+     flex-grow: 1; /* Allow content to take available vertical space */
+ }
+
+ /* Category Styling */
+ .blog-post-category {
+     display: inline-block;
+     margin-bottom: 0.5rem;
+     font-weight: 600;
+     color: #0a58ca; /* Blue color */
+ }
+
+ /* Title Styling */
+ .blog-post-title {
+     margin-top: 0;
+     margin-bottom: 0.25rem;
+     font-size: 1.5rem;
+     font-weight: 500;
+ }
+
+ .blog-post-title a {
+     text-decoration: none;
+     color: #0a58ca; /* Link color */
+     transition: color 0.15s ease-in-out;
+ }
+
+ .blog-post-title a:hover {
+     color: #084298; /* Darker blue on hover */
+ }
+
+ /* Meta Info (Date) Styling */
+ .blog-post-meta {
+     font-size: 0.9em;
+     color: #6c757d; /* Muted text color */
+     margin-bottom: 1rem;
+ }
+
+ /* Summary/Excerpt Styling */
+ .blog-post-summary {
+     margin-bottom: auto; /* Pushes summary up, making space below flexible */
+     color: #495057;
+     flex-grow: 1; /* Ensure it takes available vertical space */
+ }
+
+ /* Responsive Layout - On medium screens and up */
+ @media (min-width: 768px) { /* Bootstrap's 'md' breakpoint */
+     .blog-post-item {
+         flex-direction: row;
+     }
+
+     .blog-post-content {
+         /* Content takes available width within the row layout */
+     }
+ }
+
+ 
