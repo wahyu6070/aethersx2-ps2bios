@@ -140,115 +140,114 @@
              </div>       
         </section>
         
-        <section id="performance">
+        <section id="function">
             <div class="container">
                 <div class="card">
-                    <h2>How To Optimize Performance PPSSPP Emulator</h2>
-                    <p>PPSSPP is a popular and excellent PlayStation Portable (PSP) emulator, allowing you to play your favorite PSP games on various platforms like PC (Windows, macOS, Linux) and mobile devices (Android, iOS). However, you might sometimes encounter performance issues such as lag, stuttering sound, or low frame rates (FPS), especially on lower-spec devices.</p>
+                    
+        <h2>Apa itu PS2 BIOS?</h2>
+        <p>PS2 BIOS (<em>Basic Input/Output System</em>) adalah perangkat lunak firmware yang terdapat pada konsol PlayStation 2 (PS2). BIOS ini disimpan dalam chip memori di dalam konsol dan bertindak sebagai jembatan antara perangkat keras (<em>hardware</em>) PS2 dan perangkat lunak (<em>software</em>) seperti sistem operasi atau game.</p>
 
-					<p>Fortunately, PPSSPP provides a wealth of configuration options that you can adjust to significantly improve performance. This article will guide you through the essential settings for optimizing PPSSPP.</p>
-        			<h3>Graphics Settings</h3>
-        			<h4>Backend</h4>
-        			<ul>
-        			<li><b>Vulkan:</b> Often the fastest option if your hardware and drivers support it (generally good for modern Android and newer PC graphics cards).</li>
-        			<li><b>OpenGL:</b> The most compatible and often stable choice. A good default if Vulkan causes issues or isn't available.</li>
-        			<li><b>DirectX (Windows Only):</b> Another alternative for Windows; performance varies depending on your graphics card (Direct3D 9, Direct3D 11). Try it if OpenGL or Vulkan aren't optimal.</li>
-        			<li><b>Performance Recommendation:</b> Try Vulkan first. If it causes problems or isn't available, use OpenGL.</li>
-        			</ul>
-        			<h4>Rendering Resolution</h4>
-        			<ul>
-    				<li>This is the <b>most impactful setting</b> on performance. Setting the rendering resolution higher than the native PSP (`1x PSP`) makes the image sharper but heavily taxes the GPU.</li>
-    				<li><b>Performance Recommendation:</b> Start with <i>`1x PSP`</i> or <i>`2x PSP`</i>. Increase it only if performance remains smooth. Lowering this resolution is the quickest way to boost FPS. Don't confuse this with "Display Resolution" under System settings, which only adjusts the window/screen size.</li>
-					</ul>
-					<h4>Frameskipping</h4>
-					<ul>
-    				<li>Allows the emulator to "skip" rendering some frames to keep the game speed near normal when performance is insufficient.</li>
-    				<li>`Off`: Smoothest if your device is powerful, but will slow down if it isn't.</li>
-    				<li>`1` to `8`: Skips a fixed number of frames. Can make motion look choppy.</li>
-    				<li>`Auto`: Tries to skip frames dynamically (rarely recommended).</li>
-    				<li><b>Performance Recommendation:</b> Try setting it to <i>`Off`</i> first. If the game runs slowly, try setting it to <em>`1`</em> or <em>`2`</em>. Avoid higher values unless absolutely necessary, as it can degrade the gameplay experience.</li>
-					</ul>
-					<h4>Hardware Transform, Software Skinning, Vertex Cache</h4>
-    				<p><strong>Performance Recommendation:</strong> <i>Enable (check)</i> all these options. They leverage your graphics hardware to speed up rendering. Disable only if they cause graphical glitches in specific games.</p>
+        <h2>Fungsi PS2 BIOS</h2>
+        <ul>
+            <li>
+                <strong>Inisialisasi Perangkat Keras</strong>
+                <p>BIOS menginisialisasi komponen perangkat keras PS2 seperti CPU, GPU, RAM, drive optik (DVD/CD), dan pengontrol saat konsol dinyalakan. Memastikan semua komponen bekerja dengan baik sebelum menjalankan game atau aplikasi.</p>
+            </li>
+            <li>
+                <strong>Menyediakan Antarmuka Dasar</strong>
+                <p>BIOS menyediakan antarmuka dasar untuk mengakses menu sistem PS2, seperti pengaturan waktu, tanggal, dan preferensi lainnya. Memungkinkan pengguna untuk mengakses "System Configuration" atau menu browser untuk mengelola memory card dan disc.</p>
+            </li>
+            <li>
+                <strong>Mengelola Input/Output</strong>
+                <p>Mengatur komunikasi antara perangkat input (seperti controller DualShock) dan output (seperti layar TV). Memastikan data dari perangkat eksternal (misalnya memory card atau disc) dapat dibaca dengan benar.</p>
+            </li>
+            <li>
+                <strong>Mem-boot Game atau Aplikasi</strong>
+                <p>BIOS memeriksa keaslian disc game (melalui region lock) dan memuat data game ke memori untuk dijalankan. Mengatur proses booting agar game dapat dimulai dengan lancar.</p>
+            </li>
+            <li>
+                <strong>Manajemen Regional dan Kompatibilitas</strong>
+                <p>BIOS menentukan wilayah konsol (NTSC-U untuk Amerika, NTSC-J untuk Jepang, PAL untuk Eropa, dll.). Memastikan game yang dimainkan sesuai dengan wilayah konsol (meskipun ini dapat di-bypass dengan modifikasi).</p>
+            </li>
+        </ul>
 
-					<h4>Lazy Texture Caching (speedup)</h4>
-					<ul>
-    				<li>Can increase speed by reducing the load on the CPU, but can sometimes cause graphical artifacts or texture flickering.</li>
-    				<li><b>Performance Recommendation:</b> <em>Enable</em> if you need a speed boost, but <em>disable</em> if you notice graphical issues.</li>
-					</ul>
-					<h4>Retain Changed Textures (speedup, memory hog)</h4>
-					<ul>
-   					 <li>Similar to Lazy Texture Caching, can increase speed but uses more memory and might cause issues.</li>
-   					 <li><b>Performance Recommendation:</b> Try <em>enabling</em> if you need extra speed and have enough RAM, <em>disable</em> if it causes problems.</li>
-   				</ul>	 
-					<h4>Texture Filtering, Screen Scaling Filter</h4>
-					<ul>
-    					<li>Controls how textures are smoothed when scaled up.</li>
-   					 <li><em>`Nearest`</em>: Fastest, but results in the most blocky/pixelated image.</li>
-    					<li><em>`Linear`</em>, <em>`Bilinear`</em>: A balance between quality and performance.</li>
-   					 <li><b>Anisotropic Filtering:</b> Provides the best quality for textures viewed at an angle, but is slightly more demanding.</li>
-   					 <li><b>Performance Recommendation:</b> Set to `<code>Nearest</code>` or `<code>Linear</code>` for maximum performance.</li>
-   				  </ul>	 
-					 <h4>Lower resolution for effects (reduces artifacts)</h4>
-					 	<ul>
-    					<li>Lowers the resolution of certain demanding effects.
-    					<li><b>Performance Recommendation:</b> Set to <em>`Aggressive`</em> or <em>`Balanced`</em> for a slight performance boost.</li>
-    					</ul>
-    				 <h4>Postprocessing Shader</h4>
-    				 <ul>
-    					<li>Additional visual effects (like Bloom, Scanlines, FXAA). Can significantly impact performance.</li>
-    					<li><b>Performance Recommendation:</b> Set to <em>`Off`</em> for the best performance.</li>
-    				</ul>
-    				<h3>Audio Settings</h3>
-    				<ul>
-					<li><b>Enable Sound:</b> Disabling sound completely will provide a minor performance boost, but obviously sacrifices the audio experience. Use as a last resort.</li>
-					<li><b>Audio Latency:</b> A `Low` setting might feel more responsive but can cause crackling/stuttering audio on slow devices. `Medium` or `High` is safer for performance.</li>
-					</ul>
-					<h3>System Settings</h3>
+        <h2>Kegunaan PS2 BIOS</h2>
+        <ul>
+            <li>
+                <strong>Menjalankan Konsol PS2</strong>
+                <p>Tanpa BIOS, PS2 tidak dapat berfungsi karena tidak ada perangkat lunak yang mengatur perangkat keras atau memuat game.</p>
+            </li>
+            <li>
+                <strong>Emulasi PS2 di PC</strong>
+                <p>BIOS PS2 diperlukan untuk menjalankan emulator seperti PCSX2 di PC. Emulator membutuhkan file BIOS asli dari konsol PS2 untuk meniru lingkungan perangkat keras PS2 secara akurat.</p>
+            </li>
+            <li>
+                <strong>Modifikasi dan Homebrew</strong>
+                <p>BIOS dapat digunakan dalam modifikasi konsol (misalnya, modchip atau Free McBoot) untuk menjalankan game dari wilayah lain, game bajakan, atau aplikasi homebrew. BIOS juga memungkinkan pengembang untuk membuat perangkat lunak khusus untuk PS2.</p>
+            </li>
+            <li>
+                <strong>Pengaturan dan Pemeliharaan</strong>
+                <p>BIOS memungkinkan pengguna untuk mengelola memory card, memformatnya, atau menghapus data game. Memberikan opsi untuk mengatur preferensi sistem seperti bahasa dan output video (RGB, YPbPr, dll.).</p>
+            </li>
+        </ul>
 
-					<h4>Fast Memory (unstable)</h4>
-					<ul>
-    				<li>Can provide a significant performance boost, but as the name suggests, it's unstable and can cause crashes or bugs in some games.</li>
-    				<li><b>Performance Recommendation:</b> <em>Enable</em> if you're willing to risk crashes for speed. <em>Disable</em> if you prioritize stability.</li>
-    				</ul>
-    				<h4>Dynarec (JIT)</h4>
-    				<p>This is the Just-In-Time compiler. <i>Always enable</i> this option. Disabling it will make the emulator run extremely slowly (Interpreter mode).</p>
-    				<h4>Change emulated PSP's CPU clock (unstable)</h4>
-    				<ul>
-    				<li> Changes the emulated PSP's CPU speed. The default value is usually the most compatible.</li>
-   				 <li> Lowering it (e.g., to 60 MHz) can <em>sometimes</em> help with games that run too fast or have timing issues, or on <em>very</em> slow devices.</li>
-    				<li>Increasing it (e.g., to 333 MHz) can <em>sometimes</em> improve FPS in CPU-bound games, but often has no effect or causes issues.</li>
-    				<li><b>Performance Recommendation:</b> Leave at <em>default (0)</em> unless you know exactly what you're doing or are following specific advice for a particular game.</li>
-    				</ul>
-					<h4>I/O on thread</h4>
-					<ul>
-    				<li> Runs Input/Output operations on a separate thread. Can help reduce stuttering (brief pauses) when the game loads data from the "<em>UMD</em>".</li>
-    				<li><b>Performance Recommendation:</b> Try <em>enabling</em> it.</li>
-    				</ul>
+        <div class="note">
+            <h3>Catatan Penting</h3>
+            <ul>
+                <li><strong>Legalitas</strong>: Mengambil BIOS dari konsol PS2 yang Anda miliki untuk keperluan emulasi dianggap legal di beberapa wilayah, tetapi mendistribusikan atau mengunduh BIOS dari internet adalah ilegal.</li>
+                <li><strong>Versi BIOS</strong>: Ada berbagai versi BIOS tergantung pada model PS2 (SCPH-10000, SCPH-30000, dll.) dan wilayah. Versi BIOS dapat memengaruhi kompatibilitas game atau emulator.</li>
+                <li><strong>Keamanan</strong>: Modifikasi BIOS atau penggunaan BIOS yang tidak sah dapat merusak konsol atau menyebabkan masalah hukum.</li>
+            </ul>
+        </div>
+        
+                </div>
         	</div>
         </div>
         </section>
         <section class="faq-section">
             <div class="container">
-                <h2 class="faq-title">Questions and Answers ppsspp emulator</h2>
+                <h2 class="faq-title">Questions and Answers PS2 Bios</h2>
                 <dl class="faq-list">
                     <div class="faq-item">
                         <dt class="faq-question">
-                           Does PPSSPP come with games included?
+                           Do all PS2 emulators require a PS2 BIOS file?
                         </dt>
                         <dd class="faq-answer">
-                            <p>No. PPSSPP is just an emulator, which is software designed to run games. You need to provide your own PSP game files in ISO or CSO format.</p>
+                            <p>Most accurate PS2 emulators require a BIOS file to function properly. However, there are some experimental emulators (such as Play!) that attempt to emulate BIOS functionality without requiring a real BIOS file, although compatibility and accuracy may vary.</p>
                         </dd>
                     </div>
                     <div class="faq-item">
                         <dt class="faq-question">
-                           Is Dolphin Emulator free?
+                           How to get PS2 BIOS files legally?
                         </dt>
                         <dd class="faq-answer">
-                            <p>Yes, Dolphin Emulator is completely free and open-source. Its development is supported by a community of volunteers. You do not need to pay to download or use it.</p>
+                            <p>The most recommended method (although its legality is still debated in some quarters) is to use a special tool to extract the BIOS files directly from your physical PlayStation 2 console. This process usually involves using a modified memory card or some other method to run a "dumper" program on your PS2 console.</p>
                         </dd>
                     </div>
-                    
+                    <div class="faq-item">
+                        <dt class="faq-question">
+                           Are there different PS2 BIOS versions? What are the differences?
+                        </dt>
+                        <dd class="faq-answer">
+                            <p>Yes, there are several different versions and revisions of the PS2 BIOS, depending on the console model (e.g., early SCPH-20000 vs. later Slimline models) and geographic region (Japan, North America, Europe/PAL).</p>
+                        </dd>
+                    </div>
+                    <div class="faq-item">
+                        <dt class="faq-question">
+                           What happens if I try to run a PS2 emulator without a BIOS file?
+                        </dt>
+                        <dd class="faq-answer">
+                            <p>Almost all major PS2 emulators require a BIOS file to start. If you try to run it without a BIOS file configured, the emulator will either not start or will display an error message stating that the BIOS file is missing or not found. You will not be able to run the game.</p>
+                        </dd>
+                    </div>
+                    <div class="faq-item">
+                        <dt class="faq-question">
+                           How to get PS2 BIOS files legally?
+                        </dt>
+                        <dd class="faq-answer">
+                            <p>The most recommended method (although its legality is still debated in some quarters) is to use a special tool to extract the BIOS files directly from your physical PlayStation 2 console. This process usually involves using a modified memory card or some other method to run a <b>dumper</b> program on your PS2 console.</p>
+                        </dd>
+                    </div>
                 </dl>
             </div>
         </section>
