@@ -1,7 +1,7 @@
 ---
 lang: en
-title  : PS2 Bios Download OFFICIAL For AetherSX2 & PCSX2
-description: Essential firmware for the PlayStation 2 console. The PS2 BIOS handles system boot-up, hardware initialization, and loading games. Needed for emulation.
+title  : Playstation 2 Bios (PS2 Bios) Download OFFICIAL
+description: The PS2 BIOS is essential software stored on the console's ROM, booting the system and managing hardware initialization for PlayStation 2 games and functions.
 keywords  : [
     "download PS2 BIOS",
     "where to get ps2 bios",
@@ -19,7 +19,7 @@ keywords  : [
     "BIOS for Playstation 2 emulator",
     "install PS2 BIOS"
   ]
-author : aethersx2
+author : ps2bios8789
 adsterapopunder : true
 noadsense : true
 analistic : off
