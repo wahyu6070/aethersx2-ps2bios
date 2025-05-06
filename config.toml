@@ -9,6 +9,11 @@ PygmentsStyle      = "monokai"
 
 [params]
   author = "bjorka6868"
+  description = "AetherSX2 is PS2 Emulator for Android, iOS, Linux, Mac and Windows based Arhitecture ARM which means it can run PS2 games on Mobile and Desktop 2025."
+  logo = "/img/icon1.png"
+[params.social]
+    twitter = "https://twitter.com/aethersx2"
+    linkedin = "https://linkedin.com/in/aethersx2"
   
 buildFuture = true
 
